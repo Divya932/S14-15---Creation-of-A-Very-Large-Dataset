@@ -161,6 +161,6 @@ Here's a glimpse of the depth maps generated:
 
 
 Team Members:  
-Divya Singh
+Divya Singh  
 Vikash Ranjan
 
