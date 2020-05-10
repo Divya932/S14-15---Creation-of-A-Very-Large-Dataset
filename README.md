@@ -10,8 +10,9 @@ A special focus has been laid on handling such massive sized data efficiently wi
 
 ## Starting with..
 ### Background  
-Background contains pictures of empty roads of all sorts, ranging from city roads to flyovers. 
-
+Background contains pictures of empty roads of all sorts, ranging from city roads to flyovers.   
+[Here](https://drive.google.com/open?id=1CD2lC-16tWiOmL7dm73nNr_XfoFQL10v) is a link to all our background images.  
+  
 <b>Statistics</b>  
 * Image dimensions: 224\*224 pixels  
 * Image format: jpg - We take a special care to avoid png format here in order to save space.  
@@ -30,7 +31,10 @@ Background contains pictures of empty roads of all sorts, ranging from city road
 
 ### Foreground  
 Foreground contains object as car on a transparent background in all possible orientations.  
-
+The background can be made transparent using multiple tools like GIMP, Paint 3D or Microsoft PowerPoint.  
+In our work, we have used Paint 3D to acheive the transparency and later saved it to .png format to preserve the alpha channel.  
+[Here](https://drive.google.com/open?id=1J_yMHZ_cP93ZfL197KuxilTiXTrANsup) is a link to our foreground objects  
+  
 <b>Statistics</b>  
 * Image dimensions: varies from 94px to 120px (aspect ratio maintained to fit background)
 * No.of channels: 4
@@ -53,6 +57,8 @@ Foreground contains object as car on a transparent background in all possible or
 
 ### Foreground Mask
 Foreground masks have been created using the alpha channel of the png images  
+All our foreground masks can be found [here](https://drive.google.com/open?id=1w-fjH1UeutYIW7lNcCWBD3BK1NZ6ytxg)  
+  
 <b>Statistics</b>
 * Image format: jpg
 * Number of channels: 1
@@ -75,6 +81,8 @@ Foreground masks have been created using the alpha channel of the png images
 ### Fg_Bg Together: OverLayed Images  
 Foreground objects are overlayed on each background image at 20 random positions.  
 This gives a total of 115\*200\*20 = 4,60,000 images.  
+Find the dataset [here](https://drive.google.com/drive/folders/1Ul4mQ9BO41sjsV0HNaQlCk0wznMEBH9X?usp=sharing) (Divided into batches of 1000 images each).  
+  
 <b>Statistics</b>  
 * Image dimensions: 224\*224\*3
 * No.of channels: 3
@@ -97,6 +105,8 @@ Here's a peek into few of our images:
 
 ### Fg_Bg Masks  
 These masks are created by overlaying the foreground masks on a black patch with size equal to background image's size.  
+Find the entire Masks zip file [here](https://drive.google.com/open?id=1pzptuqtqqqSvQekhFEgCkQN9Neay-Yim) 
+  
 <b>Statistics</b>  
 * Image dimensions: 224\*224\*1
 * No.of channels: 1
@@ -119,13 +129,14 @@ The corresponding masks are:
 ### Fg_Bg Depth Maps  
 Our Monocular Depth Estimation Maps have been produced using a pre-trained DenseNet-201 model, cloned from [this](https://github.com/ialhashim/DenseDepth) repo with minor modifications. Our modifications mainly include scaling up of each image during processing to get a better view and hence a better prediction of depth for each object. The images are loaded at size 224x224, scaled up to 640x480 during processing, and then scaled down back to 224x224 before saving.  
 Lack of a Depth camera or a LIDAR camera leads us to rely on pretrained DenseNet-201 model to create depth maps.  
-
+Find a link to the entire depth map zip file [here](https://drive.google.com/open?id=1cNlUKFKTHbAlpU_KdyIDUKgHDigjbJBs)  (976.6MB)
+  
 <b>Statistics</b>  
 * Image dimensions: 224\*224\*1
 * No.of channels: 1
 * Image format: jpg - saves space as we don't need the transparency(alpha) channel here.
 * Number of Images: 400,000
-* Folder Size: 723MB
+* Zip Folder Size: 976.6MB
 * Depth Map Mean: 0.3955709002351957
 * Depth Map Std: 0.26238287425746376  
 
