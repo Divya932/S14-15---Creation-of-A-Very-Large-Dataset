@@ -134,9 +134,9 @@ The corresponding masks are:
 ### Fg_Bg Depth Maps  
 Our Monocular Depth Estimation Maps have been produced using a pre-trained DenseNet-201 model, cloned from [this](https://github.com/ialhashim/DenseDepth) repo with minor modifications. Our modifications mainly include scaling up of each image during processing to get a better view and hence a better prediction of depth for each object. The images are loaded at size 224x224, scaled up to 640x480 during processing, and then scaled down back to 224x224 before saving.  
 Lack of a Depth camera or a LIDAR camera leads us to rely on pretrained DenseNet-201 model to create depth maps.   
-Clone this [Depth Model](https://github.com/ialhashim/DenseDepth) to generate your own depth maps.   
-Find our modified version of certain files [here](https://github.com/Divya932/S14-15---Creation-of-A-Very-Large-Dataset/tree/master/Modified_files)  
-Find a link to the entire depth map zip file [here](https://drive.google.com/open?id=1cNlUKFKTHbAlpU_KdyIDUKgHDigjbJBs)  (976.6MB)
+> Clone this [Depth Model](https://github.com/ialhashim/DenseDepth) to generate your own depth maps.   
+> Find our modified version of certain files [here](https://github.com/Divya932/S14-15---Creation-of-A-Very-Large-Dataset/tree/master/Modified_files)  
+> Find a link to the entire depth map zip file [here](https://drive.google.com/open?id=1cNlUKFKTHbAlpU_KdyIDUKgHDigjbJBs)  (976.6MB)
   
 <b>Statistics</b>  
 * Image dimensions: 224\*224\*1
@@ -157,5 +157,5 @@ Here's a glimpse of the depth maps generated:
   <img src="/Depth maps/depth_156303.jpg" width="150" />
 </p>  
   
-Find the Data Preprocessing and Statistics code [here](https://github.com/Divya932/S14-15---Creation-of-A-Very-Large-Dataset/blob/master/Ass-15A-%20Preprocessing%20and%20stats.ipynb)
+> Find the Data Preprocessing and Statistics code [here](https://github.com/Divya932/S14-15---Creation-of-A-Very-Large-Dataset/blob/master/Ass-15A-%20Preprocessing%20and%20stats.ipynb)
 
