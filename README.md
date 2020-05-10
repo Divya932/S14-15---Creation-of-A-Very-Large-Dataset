@@ -56,7 +56,10 @@ In our work, we have used Paint 3D to acheive the transparency and later saved i
 </p>  
 
 ### Foreground Mask
-Foreground masks have been created using the alpha channel of the png images  
+Foreground masks have been created using the concept of alpha channel in the png images.  
+* The Alpha Channel - controls the transparency factor in our images. It ranges from 0(completely transparent) to 255(fully opaque).  
+* We make use of this channel to create our fg masks by filling in binary values, 0 for all the pixels where alpha = 0 and 255 for alpha = non-zero.  
+This gives us our corresponding masks.
 All our foreground masks can be found [here](https://drive.google.com/open?id=1w-fjH1UeutYIW7lNcCWBD3BK1NZ6ytxg)  
   
 <b>Statistics</b>
@@ -81,6 +84,7 @@ All our foreground masks can be found [here](https://drive.google.com/open?id=1w
 ### Fg_Bg Together: OverLayed Images  
 Foreground objects are overlayed on each background image at 20 random positions.  
 This gives a total of 115\*200\*20 = 4,60,000 images.  
+We choose a random location each time we overlay an fg object on bg from a list of random positions. PIL's Image.paste is used for the purpose.  
 Find the dataset [here](https://drive.google.com/drive/folders/1Ul4mQ9BO41sjsV0HNaQlCk0wznMEBH9X?usp=sharing) (Divided into batches of 1000 images each).  
   
 <b>Statistics</b>  
@@ -105,6 +109,7 @@ Here's a peek into few of our images:
 
 ### Fg_Bg Masks  
 These masks are created by overlaying the foreground masks on a black patch with size equal to background image's size.  
+* To save space we take an important step - We create a single channel in our masks by creating a black patch of size equal to bg's size(224\*224)  out of a simple 2D array. We then paste our fg masks at the same location we overlayed our fg object.
 Find the entire Masks zip file [here](https://drive.google.com/open?id=1pzptuqtqqqSvQekhFEgCkQN9Neay-Yim) 
   
 <b>Statistics</b>  
@@ -128,7 +133,9 @@ The corresponding masks are:
 
 ### Fg_Bg Depth Maps  
 Our Monocular Depth Estimation Maps have been produced using a pre-trained DenseNet-201 model, cloned from [this](https://github.com/ialhashim/DenseDepth) repo with minor modifications. Our modifications mainly include scaling up of each image during processing to get a better view and hence a better prediction of depth for each object. The images are loaded at size 224x224, scaled up to 640x480 during processing, and then scaled down back to 224x224 before saving.  
-Lack of a Depth camera or a LIDAR camera leads us to rely on pretrained DenseNet-201 model to create depth maps.  
+Lack of a Depth camera or a LIDAR camera leads us to rely on pretrained DenseNet-201 model to create depth maps.   
+Clone this [Depth Model](https://github.com/ialhashim/DenseDepth) to generate your own depth maps.   
+Find our modified version of certain files [here](https://github.com/Divya932/S14-15---Creation-of-A-Very-Large-Dataset/tree/master/Modified_files)  
 Find a link to the entire depth map zip file [here](https://drive.google.com/open?id=1cNlUKFKTHbAlpU_KdyIDUKgHDigjbJBs)  (976.6MB)
   
 <b>Statistics</b>  
@@ -149,4 +156,6 @@ Here's a glimpse of the depth maps generated:
   <img src="/Depth maps/depth_100792.jpg" width="150" />
   <img src="/Depth maps/depth_156303.jpg" width="150" />
 </p>  
+  
+Find the Data Preprocessing and Statistics code [here](https://github.com/Divya932/S14-15---Creation-of-A-Very-Large-Dataset/blob/master/Ass-15A-%20Preprocessing%20and%20stats.ipynb)
 
