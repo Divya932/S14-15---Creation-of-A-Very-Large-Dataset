@@ -157,5 +157,10 @@ Here's a glimpse of the depth maps generated:
   <img src="/Depth maps/depth_156303.jpg" width="150" />
 </p>  
   
-> Find the Data Preprocessing and Statistics code [here](https://github.com/Divya932/S14-15---Creation-of-A-Very-Large-Dataset/blob/master/Ass-15A-%20Preprocessing%20and%20stats.ipynb)
+> Find the Data Preprocessing and Statistics code [here](https://github.com/Divya932/S14-15---Creation-of-A-Very-Large-Dataset/blob/master/Ass-15A-%20Preprocessing%20and%20stats.ipynb)  
+
+
+Team Members:  
+Divya Singh
+Vikash Ranjan
 
