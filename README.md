@@ -11,7 +11,7 @@ A special focus has been laid on handling such massive sized data efficiently wi
 ## Starting with..
 ### Background  
 Background contains pictures of empty roads of all sorts, ranging from city roads to flyovers.   
-[Here](https://drive.google.com/open?id=1CD2lC-16tWiOmL7dm73nNr_XfoFQL10v) is a link to all our background images.  
+> [Here](https://drive.google.com/open?id=1CD2lC-16tWiOmL7dm73nNr_XfoFQL10v) is a link to all our background images.  
   
 <b>Statistics</b>  
 * Image dimensions: 224\*224 pixels  
@@ -33,7 +33,7 @@ Background contains pictures of empty roads of all sorts, ranging from city road
 Foreground contains object as car on a transparent background in all possible orientations.  
 The background can be made transparent using multiple tools like GIMP, Paint 3D or Microsoft PowerPoint.  
 In our work, we have used Paint 3D to acheive the transparency and later saved it to .png format to preserve the alpha channel.  
-[Here](https://drive.google.com/open?id=1J_yMHZ_cP93ZfL197KuxilTiXTrANsup) is a link to our foreground objects  
+> [Here](https://drive.google.com/open?id=1J_yMHZ_cP93ZfL197KuxilTiXTrANsup) is a link to our foreground objects  
   
 <b>Statistics</b>  
 * Image dimensions: varies from 94px to 120px (aspect ratio maintained to fit background)
@@ -60,7 +60,7 @@ Foreground masks have been created using the concept of alpha channel in the png
 * The Alpha Channel - controls the transparency factor in our images. It ranges from 0(completely transparent) to 255(fully opaque).  
 * We make use of this channel to create our fg masks by filling in binary values, 0 for all the pixels where alpha = 0 and 255 for alpha = non-zero.  
 This gives us our corresponding masks.
-All our foreground masks can be found [here](https://drive.google.com/open?id=1w-fjH1UeutYIW7lNcCWBD3BK1NZ6ytxg)  
+> All our foreground masks can be found [here](https://drive.google.com/open?id=1w-fjH1UeutYIW7lNcCWBD3BK1NZ6ytxg)  
   
 <b>Statistics</b>
 * Image format: jpg
@@ -85,7 +85,7 @@ All our foreground masks can be found [here](https://drive.google.com/open?id=1w
 Foreground objects are overlayed on each background image at 20 random positions.  
 This gives a total of 115\*200\*20 = 4,60,000 images.  
 We choose a random location each time we overlay an fg object on bg from a list of random positions. PIL's Image.paste is used for the purpose.  
-Find the dataset [here](https://drive.google.com/drive/folders/1Ul4mQ9BO41sjsV0HNaQlCk0wznMEBH9X?usp=sharing) (Divided into batches of 1000 images each).  
+> Find the dataset [here](https://drive.google.com/drive/folders/1Ul4mQ9BO41sjsV0HNaQlCk0wznMEBH9X?usp=sharing) (Divided into batches of 1000 images each).  
   
 <b>Statistics</b>  
 * Image dimensions: 224\*224\*3
@@ -110,7 +110,7 @@ Here's a peek into few of our images:
 ### Fg_Bg Masks  
 These masks are created by overlaying the foreground masks on a black patch with size equal to background image's size.  
 * To save space we take an important step - We create a single channel in our masks by creating a black patch of size equal to bg's size(224\*224)  out of a simple 2D array. We then paste our fg masks at the same location we overlayed our fg object.
-Find the entire Masks zip file [here](https://drive.google.com/open?id=1pzptuqtqqqSvQekhFEgCkQN9Neay-Yim) 
+> Find the entire Masks zip file [here](https://drive.google.com/open?id=1pzptuqtqqqSvQekhFEgCkQN9Neay-Yim) 
   
 <b>Statistics</b>  
 * Image dimensions: 224\*224\*1
