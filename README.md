@@ -1,4 +1,4 @@
-# S14-15: Creation of A Very Large Dataset
+# S14-15: Creation of a large sized dataset
 
 This Repo explains how you can, not just use available datasets in your journey of DNN but efficiently create them yourself.
 
